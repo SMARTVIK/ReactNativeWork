@@ -13,16 +13,46 @@ const SquareScreen = () => {
     return <View>
         <ColorCounter
             color="red"
-            onIncrease={() => {setRed(red + COLOR_INCREMENT)}}
-            onDecrease={() => {setRed(red + -1 * COLOR_INCREMENT)}} />
+            onIncrease={() => {
+                if(red + COLOR_INCREMENT > 255){
+                    return;
+                }
+                setRed(red + COLOR_INCREMENT)
+            }}
+            onDecrease={() => {
+                if(red - COLOR_INCREMENT < 0){
+                    return;
+                }
+                setRed(red + -1 * COLOR_INCREMENT)
+                }} />
         <ColorCounter 
             color="green" 
-            onIncrease={() => {setGreen(green + COLOR_INCREMENT)}}
-            onDecrease={() => {setGreen(green + -1 * COLOR_INCREMENT)}} />
+            onIncrease={() => {
+                if(green + COLOR_INCREMENT > 255){
+                    return;
+                }
+                setGreen(green + COLOR_INCREMENT)
+            }}
+            onDecrease={() => {
+                if(green - COLOR_INCREMENT < 0){
+                    return;
+                }
+                setGreen(green + -1 * COLOR_INCREMENT)
+                }} />
         <ColorCounter
             color="blue" 
-            onIncrease={() => {setBlue(blue + COLOR_INCREMENT)}}
-            onDecrease={() => {setBlue(blue + -1 * COLOR_INCREMENT)}} />
+            onIncrease={() => {
+                if(blue + COLOR_INCREMENT > 255){
+                    return;
+                }
+                setBlue(blue + COLOR_INCREMENT)
+            }}
+            onDecrease={() => {
+                if(blue - COLOR_INCREMENT < 0){
+                    return;
+                }
+                setBlue(blue + -1 * COLOR_INCREMENT)
+                }} />
 
             <View style={{height: 150,width: 150, backgroundColor:  `rgb(${red}, ${green}, ${blue})`}}></View>
     </View>
