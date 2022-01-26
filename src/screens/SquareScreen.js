@@ -9,51 +9,47 @@ const SquareScreen = () => {
 
     const COLOR_INCREMENT = 15;
 
+    const setColor = (color, change) => {
+
+        if(color == 'red') {
+            if(red + change > 255 || red + change < 0) {
+                return;
+            }
+            setRed(red + change);
+        }
+
+        if(color == 'green') {
+            if(green + change > 255 || green + change < 0) {
+                return;
+            }
+            setGreen(green + change);
+        }
+
+
+        if(color == 'blue') {
+            if(blue + change > 255 || blue + change < 0) {
+                return;
+            }
+            setBlue(blue + change);
+        }
+
+
+    }
+
     console.log(`rgb(${red}, ${green}, ${blue}`)
     return <View>
         <ColorCounter
             color="red"
-            onIncrease={() => {
-                if(red + COLOR_INCREMENT > 255){
-                    return;
-                }
-                setRed(red + COLOR_INCREMENT)
-            }}
-            onDecrease={() => {
-                if(red - COLOR_INCREMENT < 0){
-                    return;
-                }
-                setRed(red + -1 * COLOR_INCREMENT)
-                }} />
+            onIncrease={() => {setColor('red', COLOR_INCREMENT)}}
+            onDecrease={() => {setColor('red', -1 * COLOR_INCREMENT)}} />
         <ColorCounter 
             color="green" 
-            onIncrease={() => {
-                if(green + COLOR_INCREMENT > 255){
-                    return;
-                }
-                setGreen(green + COLOR_INCREMENT)
-            }}
-            onDecrease={() => {
-                if(green - COLOR_INCREMENT < 0){
-                    return;
-                }
-                setGreen(green + -1 * COLOR_INCREMENT)
-                }} />
+            onIncrease={() => {setColor('green', COLOR_INCREMENT)}}
+            onDecrease={() => {setColor('green', -1 * COLOR_INCREMENT)}} />
         <ColorCounter
             color="blue" 
-            onIncrease={() => {
-                if(blue + COLOR_INCREMENT > 255){
-                    return;
-                }
-                setBlue(blue + COLOR_INCREMENT)
-            }}
-            onDecrease={() => {
-                if(blue - COLOR_INCREMENT < 0){
-                    return;
-                }
-                setBlue(blue + -1 * COLOR_INCREMENT)
-                }} />
-
+            onIncrease={() => {setColor('blue', COLOR_INCREMENT)}}
+            onDecrease={() => {setColor('blue', -1 * COLOR_INCREMENT)}} />
             <View style={{height: 150,width: 150, backgroundColor:  `rgb(${red}, ${green}, ${blue})`}}></View>
     </View>
 };
