@@ -15,7 +15,7 @@ const HomeScreen = ({ navigation }) => {
         onPress={() => {
           navigation.navigate('List')
         }}
-        title="Go to List screen"
+        title="Go to List demo"
       />
 
       <Button
@@ -23,33 +23,40 @@ const HomeScreen = ({ navigation }) => {
           console.log('button pressed')
           navigation.navigate('Image')
         }}
-        title="Go to Image screen"
+        title="Go to Image demo"
       />
 
       <Button
         onPress={() => {
           navigation.navigate('Counter')
         }}
-        title="Go to Counter screen"
+        title="Go to Counter demo"
       />
       <Button
         onPress={() => {
           navigation.navigate('Color')
         }}
-        title="Go to Color screen"
+        title="Go to Color demo"
       />
 
       <Button
         onPress={() => {
           navigation.navigate('Square')
         }}
-        title="Go to Square screen"
+        title="Go to Square demo"
       />
       <Button
         onPress={() => {
           navigation.navigate('Text')
         }}
-        title="Go to Text screen"
+        title="Go to Text demo"
+      />
+
+      <Button
+        onPress={() => {
+          navigation.navigate('Box')
+        }}
+        title="Go to Box demo"
       />
     </View>
   )
